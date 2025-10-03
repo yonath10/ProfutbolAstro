@@ -1,0 +1,152 @@
+---
+// src/components/Hero.astro
+---
+
+<section
+  class="hero-bg min-h-[60vh] md:min-h-[70vh] flex items-center justify-center py-20 animate-fade-in"
+  aria-labelledby="hero-heading"
+>
+  <div class="container-custom text-center text-white relative z-10">
+    <div class="hero-content max-w-4xl mx-auto">
+      <h1
+        id="hero-heading"
+        class="text-4xl md:text-6xl font-extrabold mb-4 animate-slide-in-down"
+        style="animation-delay: 0.2s;"
+      >
+        ProFútbol JC
+      </h1>
+      <p
+        class="text-lg md:text-xl mb-8 leading-relaxed animate-slide-in-up"
+        style="animation-delay: 0.4s;"
+      >
+        Formando a los próximos campeones del fútbol profesional. Entrenamiento de
+        élite para jóvenes talentos en Tenjo, Cundinamarca.
+      </p>
+      <div
+        class="hero-actions animate-zoom-in"
+        style="animation-delay: 0.6s;"
+      >
+        <a
+          href="/contacto"
+          class="cta-button primary"
+          aria-label="Inscribirse en ProFútbol JC"
+        >
+          Inscribirse Ahora
+        </a>
+        <a
+          href="/equipo"
+          class="cta-button secondary"
+          aria-label="Conocer nuestro equipo técnico"
+        >
+          Conocer Equipo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Flex para alinear verticalmente el contenido */
+  .flex {
+    display: flex;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+
+  /* Altura mínima y padding */
+  .min-h-[60vh] { min-height: 60vh; }
+  .py-20 { padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl); }
+  @media (min-width: 768px) {
+    .md\:min-h-[70vh] { min-height: 70vh; }
+  }
+
+  /* Tipografía y espaciado del contenido */
+  .text-center { text-align: center; }
+  .text-white { color: var(--white); }
+  .relative { position: relative; }
+  .z-10 { z-index: 10; }
+  .max-w-4xl { max-width: 80rem; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+  
+  h1 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: var(--shadow-sm);
+  }
+  p {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+    margin-bottom: var(--spacing-lg);
+  }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.75rem; /* 60px */
+      line-height: 1;
+    }
+    p {
+      font-size: 1.25rem; /* 20px */
+    }
+  }
+
+  /* Estilos para los botones de llamada a la acción (CTA) */
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.125rem; /* 18px */
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .cta-button.primary {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+  }
+
+  .cta-button.primary:hover,
+  .cta-button.primary:focus-visible {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .cta-button.secondary {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+  }
+
+  .cta-button.secondary:hover,
+  .cta-button.secondary:focus-visible {
+    background-color: var(--white);
+    color: var(--dark-bg);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Responsive para los botones */
+  @media (min-width: 640px) {
+    .hero-actions {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+</style>

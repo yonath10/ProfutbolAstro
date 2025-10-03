@@ -1,0 +1,55 @@
+<section class="py-24 bg-surface" id="servicios">
+    <div class="container mx-auto px-6">
+        <h2 class="text-5xl font-bold text-center mb-16 animate-slide-in-down">Nuestros <span class="text-accent">Servicios</span></h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-background p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-border animate-slide-in-up" style="animation-delay: 0.2s;">
+                <div class="text-center">
+                    <span class="material-icons text-accent text-6xl mb-4">sports_soccer</span>
+                    <h3 class="text-2xl font-bold mb-2 text-text">Canchas de Fútbol</h3>
+                    <p class="text-subtle-text">Canchas sintéticas de última generación para fútbol 5, 7 y 11. Reserva por horas y disfruta con tus amigos.</p>
+                </div>
+            </div>
+            <div class="bg-background p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-border animate-slide-in-up" style="animation-delay: 0.4s;">
+                 <div class="text-center">
+                    <span class="material-icons text-accent text-6xl mb-4">cake</span>
+                    <h3 class="text-2xl font-bold mb-2 text-text">Eventos y Cumpleaños</h3>
+                    <p class="text-subtle-text">Celebra con nosotros. Organizamos eventos corporativos y fiestas de cumpleaños con todo incluido.</p>
+                </div>
+            </div>
+            <div class="bg-background p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 flex flex-col border border-border animate-slide-in-up" style="animation-delay: 0.6s;">
+                <div class="text-center">
+                    <span class="material-icons text-accent text-6xl mb-4">photo_camera</span>
+                    <h3 class="text-2xl font-bold mb-2 text-text">Servicio de Fotografía</h3>
+                    <p class="text-subtle-text mb-4">Inmortaliza los mejores momentos de tu partido o evento con nuestro servicio de fotografía profesional.</p>
+                </div>
+                <div class="mt-auto relative w-full h-48 rounded-lg overflow-hidden border border-border" id="photo-carousel">
+                    <div class="carousel-item active absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100">
+                        <img alt="Fotografía de evento 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCULHJAw5ZxBhJao_1bcEzphNjuVyq6ZFgFVt8DoY1hqBOf-fNRDVueXgwWdnzkzeEBZP3FVXm3HTg3Bm5-MZD73T_NOFz4nuOfUpihKV0AuRK7qfDppvtSdJTcCyTBWxu9N9V_f5wO3qYh9XTtmmwxoHmIgLZQ9Cx2w-nghXp4SqPtq9h2zE2SY74-18QsSCrXlHRM9p9TzfTpFodBWHNke6Q93GerGjqWNGrwxLxdtm3IiMDOJeF3ZKSxIjpY7TpraS2Z4NBNYSM"/>
+                    </div>
+                    <div class="carousel-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0">
+                        <img alt="Fotografía de evento 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ20PEe16YknHW4W12OGhhzBJbkET2VPfP3mfD7kngaSGhJnsP7wir08OoN2Tlp3mk4NjZvpnLzwHNCtUvSxL_pwLewM_K1jvxQDsKBd2zthGJXXwzvdJCPfDcr01aB3bgblLMnmRNp-39HZiyFo9mzbi6na0mXaoggg0iIRw83R7o0WbAMRqd1WKmKjaO-bJF0PYNx_xeea5q3OXRUls4uvKyCbgzxxFvWrR7itWcXfJnEhAinewov6aQplJsRFoqecfm7fvm4tQ"/>
+                    </div>
+                    <div class="carousel-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0">
+                        <img alt="Fotografía de evento 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtqXmVYUJILmGPiPCac8mqcKt2LMI3l6D7npMtF0P5SjPYVO7kQoySxdhVw0buNbanHzJs92D3YWATcwvHMAnKmo-fNVW4MZOq9Gs0WhL2Gf5OmYAM6r4HwIyK2CmpZGsNsZJ-geSNGl1BxEP_WZht20yoUUuwKVs3PFipU3tf9FOMLLXJpATLBB-Kkdx6cZL0fcRsWT4YtaQZ9FCWbSdHd3w5GDxFxK0--RTg47ZIh2ek-cIPkuKDRzegfTDPPTuhWGmRRio24js"/>
+                    </div>
+                    <button id="prevBtn" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-1 focus:outline-none hover:bg-black/70 transition-colors duration-200">
+                        <span class="material-icons">chevron_left</span>
+                    </button>
+                    <button id="nextBtn" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-1 focus:outline-none hover:bg-black/70 transition-colors duration-200">
+                        <span class="material-icons">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+    /* El CSS del carrusel se maneja ahora con clases de Tailwind, 
+       pero mantenemos esta regla para la visibilidad inicial */
+    .carousel-item {
+        display: block; /* Siempre visible para que la opacidad controle la transición */
+    }
+</style>

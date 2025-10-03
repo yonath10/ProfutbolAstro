@@ -1,0 +1,199 @@
+---
+// Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-8" role="contentinfo">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-8">
+            <!-- Brand Column -->
+            <div class="lg:col-span-4">
+                <a 
+                    href="#inicio" 
+                    class="inline-flex items-center gap-3 mb-4 group"
+                    aria-label="Profutbol JC - Ir al inicio"
+                >
+                    <img 
+                        src="/images/profutbol.png" 
+                        alt="Logo Profutbol JC" 
+                        width="40" 
+                        height="40" 
+                        loading="lazy"
+                        class="transition-transform group-hover:scale-110"
+                    />
+                    <span class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
+                        Profutbol JC
+                    </span>
+                </a>
+                
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    El mejor lugar para vivir tu pasión por el fútbol en la Sabana de Bogotá. 
+                    <strong class="text-white">Canchas profesionales</strong>, 
+                    <strong class="text-white">fotografía deportiva</strong> 
+                    y <strong class="text-white">torneos emocionantes</strong> te esperan.
+                </p>
+                
+                <!-- Social Media -->
+                <div class="flex gap-3" role="list" aria-label="Redes sociales">
+                    <a 
+                        href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" 
+                        target="_blank" 
+                        rel="noopener"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        aria-label="Síguenos en Facebook - Abre en nueva ventana"
+                    >
+                        <i class="fab fa-facebook-f text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a 
+                        href="https://www.instagram.com/profutboljc/" 
+                        target="_blank" 
+                        rel="noopener"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 transition-colors"
+                        aria-label="Síguenos en Instagram - Abre en nueva ventana"
+                    >
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a 
+                        href="https://www.tiktok.com/@profutbol.jc" 
+                        target="_blank" 
+                        rel="noopener"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-black transition-colors"
+                        aria-label="Síguenos en TikTok - Abre en nueva ventana"
+                    >
+                        <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    </a>
+                    <a 
+                        href="https://wa.me/573203459145" 
+                        target="_blank" 
+                        rel="noopener"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                        aria-label="Contáctanos por WhatsApp - Abre en nueva ventana"
+                    >
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="lg:col-span-2">
+                <h3 class="text-white font-bold text-lg mb-4">Enlaces Rápidos</h3>
+                <nav role="navigation" aria-label="Enlaces del pie de página">
+                    <ul class="space-y-3" role="list">
+                        <li role="listitem">
+                            <a href="#inicio" class="hover:text-yellow-400 transition-colors inline-block">
+                                Inicio
+                            </a>
+                        </li>
+                        <li role="listitem">
+                            <a href="#servicios" class="hover:text-yellow-400 transition-colors inline-block">
+                                Servicios
+                            </a>
+                        </li>
+                        <li role="listitem">
+                            <a href="#nosotros" class="hover:text-yellow-400 transition-colors inline-block">
+                                Nosotros
+                            </a>
+                        </li>
+                        <li role="listitem">
+                            <a href="#contacto" class="hover:text-yellow-400 transition-colors inline-block">
+                                Contacto
+                            </a>
+                        </li>
+                        <li role="listitem">
+                            <a href="#valores" class="hover:text-yellow-400 transition-colors inline-block">
+                                Nuestros Valores
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Services Links -->
+            <div class="lg:col-span-3">
+                <h3 class="text-white font-bold text-lg mb-4">Nuestros Servicios</h3>
+                <nav role="navigation" aria-label="Servicios disponibles">
+                    <ul class="space-y-3" role="list">
+                        <li role="listitem" class="text-gray-400">Alquiler de Canchas</li>
+                        <li role="listitem" class="text-gray-400">Fotografía Deportiva</li>
+                        <li role="listitem" class="text-gray-400">Torneos de Fútbol</li>
+                        <li role="listitem" class="text-gray-400">Eventos Corporativos</li>
+                        <li role="listitem" class="text-gray-400">Entrenamientos</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="lg:col-span-3">
+                <h3 class="text-white font-bold text-lg mb-4">Información de Contacto</h3>
+                <address class="not-italic space-y-4" role="list">
+                    <div class="flex items-start gap-3" role="listitem">
+                        <i class="fas fa-phone text-yellow-400 mt-1" aria-hidden="true"></i>
+                        <a 
+                            href="tel:+573203459145" 
+                            class="hover:text-yellow-400 transition-colors"
+                        >
+                            +57 320 345 9145
+                        </a>
+                    </div>
+                    <div class="flex items-start gap-3" role="listitem">
+                        <i class="fas fa-envelope text-yellow-400 mt-1" aria-hidden="true"></i>
+                        <a 
+                            href="mailto:profutboljc@gmail.com" 
+                            class="hover:text-yellow-400 transition-colors break-all"
+                        >
+                            profutboljc@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex items-start gap-3" role="listitem">
+                        <i class="fas fa-map-marker-alt text-yellow-400 mt-1" aria-hidden="true"></i>
+                        <span class="text-gray-400">
+                            Km 3 vía Siberia, Tenjo, Cundinamarca
+                        </span>
+                    </div>
+                    <div class="flex items-start gap-3" role="listitem">
+                        <i class="fas fa-clock text-yellow-400 mt-1" aria-hidden="true"></i>
+                        <span class="text-gray-400">
+                            Lun - Dom: 6:00 AM - 10:00 PM
+                        </span>
+                    </div>
+                </address>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                <div class="text-center md:text-left">
+                    <p class="text-gray-400 text-sm">
+                        © <span id="current-year">{currentYear}</span> Profutbol JC. Todos los derechos reservados. 
+                        Hecho con <span class="text-yellow-400" role="img" aria-label="amor">❤️</span> para los amantes del fútbol
+                    </p>
+                </div>
+                <div class="text-center md:text-right">
+                    <nav role="navigation" aria-label="Enlaces legales">
+                        <ul class="flex flex-wrap justify-center md:justify-end gap-4 text-sm" role="list">
+                            <li role="listitem">
+                                <a 
+                                    href="/politica" 
+                                    rel="nofollow"
+                                    class="text-gray-400 hover:text-yellow-400 transition-colors"
+                                >
+                                    Política de Privacidad
+                                </a>
+                            </li>
+                            <li role="listitem">
+                                <a 
+                                    href="/terminos" 
+                                    rel="nofollow"
+                                    class="text-gray-400 hover:text-yellow-400 transition-colors"
+                                >
+                                    Términos y Condiciones
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

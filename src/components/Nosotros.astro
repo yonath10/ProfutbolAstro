@@ -1,18 +1,50 @@
-<section class="py-24 bg-background" id="nosotros">
+---
+// src/components/Nosotros.astro
+---
+<section class="py-24 bg-surface" id="nosotros">
     <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 animate-fade-in" style="animation-delay: 0.2s;">
-                <h2 class="text-5xl font-bold mb-6">Sobre <span class="text-accent">Nosotros</span></h2>
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <div class="order-1 lg:order-2 animate-zoom-in" style="animation-delay: 0.4s;">
+                <div class="relative group">
+                    <img 
+                        src="/images/quienes.jpg" 
+                        alt="Los fundadores de Profutbol JC en una de las canchas de césped natural." 
+                        width="600"
+                        height="600"
+                        loading="lazy"
+                        class="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-square transform group-hover:scale-[1.03] transition-transform duration-500 border-4 border-white/10"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl pointer-events-none"></div>
+                </div>
+            </div>
+
+            <div class="order-2 lg:order-1 animate-fade-in" style="animation-delay: 0.2s;">
+                <p class="text-accent font-semibold uppercase tracking-wider mb-2">Nuestra Historia</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-text">Nuestra Pasión, <span class="text-accent">Tu Cancha</span></h2>
                 <p class="mb-6 text-lg text-subtle-text leading-relaxed"> 
-                    En ProfutbolJC, somos más que un simple lugar para jugar fútbol. Somos una comunidad apasionada por el deporte, dedicada a ofrecer las mejores instalaciones y un ambiente familiar para todos nuestros visitantes. 
+                    Profutbol JC nació de un sueño: crear un lugar donde la pasión por el fútbol se viviera en cada rincón. Somos más que un complejo deportivo; somos una familia que entiende la importancia de un buen pase, la emoción de un gol y la alegría de compartir con amigos.
                 </p>
-                <p class="text-lg text-subtle-text leading-relaxed"> 
-                    Nuestro complejo está diseñado para satisfacer tanto a jugadores aficionados como a profesionales, brindando un espacio seguro, moderno y lleno de energía para la práctica del deporte rey. 
+                <p class="text-lg text-subtle-text leading-relaxed mb-8"> 
+                    Por eso, hemos cuidado cada detalle, desde el césped de nuestras canchas hasta el ambiente familiar, para ofrecerte una experiencia futbolística inigualable en la Sabana de Bogotá.
                 </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                    <div class="bg-background p-4 rounded-xl border border-border">
+                        <i class="fas fa-heart text-accent text-3xl mb-2" aria-hidden="true"></i>
+                        <h3 class="font-bold text-text">Pasión</h3>
+                    </div>
+                    <div class="bg-background p-4 rounded-xl border border-border">
+                        <i class="fas fa-medal text-accent text-3xl mb-2" aria-hidden="true"></i>
+                        <h3 class="font-bold text-text">Calidad</h3>
+                    </div>
+                    <div class="bg-background p-4 rounded-xl border border-border">
+                        <i class="fas fa-users text-accent text-3xl mb-2" aria-hidden="true"></i>
+                        <h3 class="font-bold text-text">Comunidad</h3>
+                    </div>
+                </div>
             </div>
-            <div class="order-1 md:order-2 animate-zoom-in" style="animation-delay: 0.4s;">
-                <img alt="Equipo de fútbol celebrando" class="rounded-2xl shadow-2xl w-full h-auto object-cover transform hover:scale-[1.02] transition-transform duration-500 border border-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYfB9og4d1qeBc6s6U83sjenkKhhWuQIRirLEkB02kvr_Z7pJLYXVfgqh4STixKyvBt5tgou3j6I_ROGzGS1tllX50bSetogFYbz2fDd2KDzzAKTjTiUw7y4P0v7kP0VRVb-pUd9w20_-mW5bSWQ3LcTamKLlVQpNBFEvnazIoPp71mCgE-LnXjgyIPCdngr8sD2YVNC0DuWXjkUmOoI7SY6hbwYhFuO4-DZ9xmtzRWCsyKO5W3FUBg_soDHzrlo-5qM-HJN2-PFU"/>
-            </div>
+
         </div>
     </div>
 </section>

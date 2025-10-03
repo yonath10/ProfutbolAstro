@@ -1,17 +1,66 @@
+---
+// src/components/Torneos.astro
+---
 <section class="py-24 bg-background" id="torneos">
     <div class="container mx-auto px-6">
-        <h2 class="text-5xl font-bold text-center mb-16 animate-slide-in-down">Próximos <span class="text-accent">Torneos</span></h2>
-        <div class="max-w-5xl mx-auto space-y-12">
-            <div class="bg-surface rounded-2xl shadow-xl overflow-hidden md:flex items-center transition-shadow duration-300 hover:shadow-2xl border border-border animate-fade-in" style="animation-delay: 0.2s;">
-                <img alt="Jugadores en un torneo de fútbol" class="md:w-2/5 h-64 md:h-auto w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Upv5LCGYWl4-rE7T3a-_X2SZquxxXA_izG-_GZJxPBpHCH-SnmM9zlHpY3UttVQpcKQRphoPOhcCMcCpiLDs7SwVTnFG4ow543gzOj9254tV2KRSfAAgkdG3JrBSb-rfRTv5QxXQYr8XmjJ-W04qPz0Qvy-Xow7njbv9IQxDW3QAjZ1AHT_epX9SnoPPfWvxi12Z1oX8Fh5Bw65VaLHr_sscF318C7BxFhh4MBV8Ayagc3--FWKj1eD2gLYO2UMTu7LVcr7LuDY"/>
-                <div class="p-8 md:p-10">
-                    <p class="text-sm text-accent font-bold uppercase tracking-wider">Agosto 2024</p>
-                    <h3 class="text-3xl font-bold mt-2 mb-4 text-text">Copa de Verano ProfutbolJC</h3>
-                    <p class="text-subtle-text mb-6">¡Inscribe a tu equipo y compite por la gloria! Grandes premios y un ambiente inigualable. Categorías libre y veteranos.</p>
-                    <a class="bg-accent text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300 inline-block shadow-md shadow-accent/30" href="#">Más Información</a>
+        <header class="text-center mb-16 max-w-3xl mx-auto animate-slide-in-down">
+            <h2 class="text-4xl md:text-5xl font-bold text-text">
+                Compite al <span class="text-accent">Máximo Nivel</span>
+            </h2>
+            <p class="mt-4 text-lg text-subtle-text">
+                Estos son los próximos torneos que harán historia en nuestras canchas.
+            </p>
+        </header>
+
+        <div class="max-w-5xl mx-auto">
+            <article class="bg-surface rounded-2xl shadow-xl overflow-hidden md:flex items-center transition-shadow duration-300 hover:shadow-2xl border border-border animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="md:w-2/5 h-64 md:h-auto w-full">
+                    <img 
+                        alt="Equipo campeón del torneo Cota Elite Futbol Cup posando en la cancha de Profutbol JC." 
+                        class="w-full h-full object-cover" 
+                        src="/images/4.jpg"
+                        loading="lazy"
+                        width="450"
+                        height="450"
+                    />
                 </div>
-            </div>
-           
+                
+                <div class="p-8 md:p-10">
+                    <p class="text-sm text-accent font-bold uppercase tracking-wider">
+                        Octubre - Diciembre
+                    </p>
+                    <h3 class="text-3xl font-bold mt-2 mb-4 text-text">
+                        COTA ELITE FUTBOL CUP - 2ª Edición
+                    </h3>
+                    <p class="text-subtle-text mb-6">
+                        ¡Vuelve el octagonal más competitivo de Cota! Inscribe a tu equipo y compite por una bolsa de premios de <strong class="text-text">$16 millones</strong>.
+                    </p>
+                    
+                    <ul class="text-subtle-text space-y-2 mb-8 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-camera-retro text-accent" aria-hidden="true"></i> Fotografía Profesional</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-video text-accent" aria-hidden="true"></i> Transmisión en Vivo</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-handshake-angle text-accent" aria-hidden="true"></i> Terna Arbitral Completa</li>
+                    </ul>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a 
+                            class="bg-accent text-background font-bold py-3 px-6 rounded-full hover:bg-opacity-90 transition duration-300 inline-flex items-center justify-center transform hover:scale-105 shadow-md shadow-accent/30" 
+                            href="#contacto"
+                        >
+                            Inscribe tu Equipo
+                        </a>
+                        <a 
+                            class="bg-transparent border-2 border-text text-text font-bold py-3 px-6 rounded-full hover:bg-text hover:text-background transition duration-300 inline-flex items-center justify-center transform hover:scale-105" 
+                            href="/pdfs/folleto-cota-elite-cup.pdf" 
+                            download="folleto-cota-elite-cup.pdf"
+                            aria-label="Descargar la información del torneo en formato PDF"
+                        >
+                            <i class="fa-solid fa-file-pdf mr-2" aria-hidden="true"></i>
+                            Descargar Información
+                        </a>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </section>

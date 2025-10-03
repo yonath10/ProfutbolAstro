@@ -1,55 +1,89 @@
-<section class="py-24 bg-surface" id="servicios">
-    <div class="container mx-auto px-6">
-        <h2 class="text-5xl font-bold text-center mb-16 animate-slide-in-down">Nuestros <span class="text-accent">Servicios</span></h2>
-        <div class="grid md:grid-cols-3 gap-10">
-            <div class="bg-background p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-border animate-slide-in-up" style="animation-delay: 0.2s;">
-                <div class="text-center">
-                    <span class="material-icons text-accent text-6xl mb-4">sports_soccer</span>
-                    <h3 class="text-2xl font-bold mb-2 text-text">Canchas de Fútbol</h3>
-                    <p class="text-subtle-text">Canchas sintéticas de última generación para fútbol 5, 7 y 11. Reserva por horas y disfruta con tus amigos.</p>
-                </div>
+---
+// src/components/Servicios.astro
+const services = [
+  {
+    icon: "fa-solid fa-futbol",
+    title: "Canchas Profesionales",
+    description: "Disfruta de nuestras canchas de Fútbol 5, 7 y 11 con césped natural de la más alta calidad, mantenido para una experiencia de juego superior.",
+    image: "/images/canchas.jpg",
+    alt: "Cancha de fútbol 11 con césped natural bien cuidado en Profutbol JC."
+  },
+  {
+    icon: "fa-solid fa-camera-retro",
+    title: "Fotografía Deportiva",
+    description: "Inmortaliza cada gol y cada jugada. Ofrecemos un servicio de fotografía profesional para capturar los mejores momentos de tu partido o evento.",
+    image: "/images/perrea.jpg",
+    alt: "Fotógrafo capturando la acción durante un partido de fútbol en Profutbol JC."
+  },
+  {
+    icon: "fa-solid fa-trophy",
+    title: "Torneos Competitivos",
+    description: "Participa en nuestros emocionantes torneos durante todo el año. Compite en un ambiente organizado y profesional con premios para los campeones.",
+    image: "/images/3.jpg",
+    alt: "Equipo de fútbol posando con un banner en un torneo de Profutbol JC."
+  },
+  {
+    icon: "fa-solid fa-utensils",
+    title: "Comida y Bebidas",
+    description: "Relájate después del partido en nuestra zona de comidas. Disfruta de una variedad de bebidas refrescantes y snacks para recargar energías.",
+  },
+  {
+    icon: "fa-solid fa-car",
+    title: "Amplio Parqueadero",
+    description: "Ven sin preocupaciones. Contamos con una zona de parqueo amplia y segura para tu comodidad y la de tu equipo.",
+    image: "/images/parking.JPG",
+    alt: "Zona de parqueadero amplia junto a las canchas de Profutbol JC."
+  },
+  {
+    icon: "fa-solid fa-birthday-cake",
+    title: "Eventos y Cumpleaños",
+    description: "Celebra de una manera diferente. Organizamos eventos corporativos, fiestas de cumpleaños y reuniones con todo lo necesario para un día inolvidable.",
+  }
+];
+---
+
+<section id="servicios" class="py-24 bg-surface">
+  <div class="container mx-auto px-6">
+    <header class="text-center mb-16 max-w-3xl mx-auto animate-slide-in-down">
+      <h2 class="text-4xl md:text-5xl font-bold text-text">
+        Todo lo que necesitas para <span class="text-accent">vivir el fútbol</span>
+      </h2>
+      <p class="mt-4 text-lg text-subtle-text">
+        Más que solo canchas, te ofrecemos una experiencia completa.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <article 
+          class="bg-background rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-border overflow-hidden flex flex-col animate-slide-in-up" 
+          style={`animation-delay: ${index * 150}ms;`}
+        >
+          {service.image && (
+            <div class="relative h-48">
+              <img 
+                src={service.image} 
+                alt={service.alt} 
+                class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="200"
+              />
+              <div class="absolute inset-0 bg-black/20"></div>
             </div>
-            <div class="bg-background p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-border animate-slide-in-up" style="animation-delay: 0.4s;">
-                 <div class="text-center">
-                    <span class="material-icons text-accent text-6xl mb-4">cake</span>
-                    <h3 class="text-2xl font-bold mb-2 text-text">Eventos y Cumpleaños</h3>
-                    <p class="text-subtle-text">Celebra con nosotros. Organizamos eventos corporativos y fiestas de cumpleaños con todo incluido.</p>
-                </div>
+          )}
+          
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="flex items-center gap-4 mb-4">
+              <i class={`${service.icon} text-accent text-3xl`} aria-hidden="true"></i>
+              <h3 class="text-2xl font-bold text-text">{service.title}</h3>
             </div>
-            <div class="bg-background p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 flex flex-col border border-border animate-slide-in-up" style="animation-delay: 0.6s;">
-                <div class="text-center">
-                    <span class="material-icons text-accent text-6xl mb-4">photo_camera</span>
-                    <h3 class="text-2xl font-bold mb-2 text-text">Servicio de Fotografía</h3>
-                    <p class="text-subtle-text mb-4">Inmortaliza los mejores momentos de tu partido o evento con nuestro servicio de fotografía profesional.</p>
-                </div>
-                <div class="mt-auto relative w-full h-48 rounded-lg overflow-hidden border border-border" id="photo-carousel">
-                    <div class="carousel-item active absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100">
-                        <img alt="Fotografía de evento 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCULHJAw5ZxBhJao_1bcEzphNjuVyq6ZFgFVt8DoY1hqBOf-fNRDVueXgwWdnzkzeEBZP3FVXm3HTg3Bm5-MZD73T_NOFz4nuOfUpihKV0AuRK7qfDppvtSdJTcCyTBWxu9N9V_f5wO3qYh9XTtmmwxoHmIgLZQ9Cx2w-nghXp4SqPtq9h2zE2SY74-18QsSCrXlHRM9p9TzfTpFodBWHNke6Q93GerGjqWNGrwxLxdtm3IiMDOJeF3ZKSxIjpY7TpraS2Z4NBNYSM"/>
-                    </div>
-                    <div class="carousel-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0">
-                        <img alt="Fotografía de evento 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ20PEe16YknHW4W12OGhhzBJbkET2VPfP3mfD7kngaSGhJnsP7wir08OoN2Tlp3mk4NjZvpnLzwHNCtUvSxL_pwLewM_K1jvxQDsKBd2zthGJXXwzvdJCPfDcr01aB3bgblLMnmRNp-39HZiyFo9mzbi6na0mXaoggg0iIRw83R7o0WbAMRqd1WKmKjaO-bJF0PYNx_xeea5q3OXRUls4uvKyCbgzxxFvWrR7itWcXfJnEhAinewov6aQplJsRFoqecfm7fvm4tQ"/>
-                    </div>
-                    <div class="carousel-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0">
-                        <img alt="Fotografía de evento 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtqXmVYUJILmGPiPCac8mqcKt2LMI3l6D7npMtF0P5SjPYVO7kQoySxdhVw0buNbanHzJs92D3YWATcwvHMAnKmo-fNVW4MZOq9Gs0WhL2Gf5OmYAM6r4HwIyK2CmpZGsNsZJ-geSNGl1BxEP_WZht20yoUUuwKVs3PFipU3tf9FOMLLXJpATLBB-Kkdx6cZL0fcRsWT4YtaQZ9FCWbSdHd3w5GDxFxK0--RTg47ZIh2ek-cIPkuKDRzegfTDPPTuhWGmRRio24js"/>
-                    </div>
-                    <button id="prevBtn" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-1 focus:outline-none hover:bg-black/70 transition-colors duration-200">
-                        <span class="material-icons">chevron_left</span>
-                    </button>
-                    <button id="nextBtn" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-1 focus:outline-none hover:bg-black/70 transition-colors duration-200">
-                        <span class="material-icons">chevron_right</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+            <p class="text-subtle-text leading-relaxed flex-grow">
+              {service.description}
+            </p>
+          </div>
+        </article>
+      ))}
     </div>
+  </div>
 </section>
-
-
-
-<style>
-    /* El CSS del carrusel se maneja ahora con clases de Tailwind, 
-       pero mantenemos esta regla para la visibilidad inicial */
-    .carousel-item {
-        display: block; /* Siempre visible para que la opacidad controle la transición */
-    }
-</style>

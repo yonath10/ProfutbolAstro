@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+    title="Política de Privacidad - ProFutbol JC"
+    description="Política de privacidad de ProFutbol JC - Conozca cómo se gestionan sus datos personales según la legislación colombiana."
+>
+    <Header />
+    <main class="py-16 md:py-24 bg-surface" role="main">
+        <section class="container mx-auto px-6 max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-10 text-text">Política de Tratamiento de <span class="text-accent">Datos Personales</span></h1>
+
+            <article class="prose prose-lg max-w-none text-subtle-text">
+                <p class="text-xl">
+                    En ProFutbol JC, valoramos su privacidad y nos comprometemos a proteger sus datos personales. Esta
+                    política explica cómo recolectamos, usamos y protegemos su información, conforme a la legislación
+                    colombiana vigente.
+                </p>
+
+                <section aria-labelledby="responsable">
+                    <h2 id="responsable">1. Identificación del Responsable del Tratamiento</h2>
+                    <address class="not-italic">
+                        <strong>ProFutbol S.A.S</strong><br>
+                        NIT: 901616528-1<br>
+                        Dirección: Kilómetro 3 vía Siberia a Tenjo, Cundinamarca, Colombia<br>
+                        Correo: <a href="mailto:Profutboljc@gmail.com">Profutboljc@gmail.com</a><br>
+                        Teléfono: +57 3203459145
+                    </address>
+                </section>
+
+                <section>
+                    <h2>2. Marco Normativo</h2>
+                    <p>Esta política se rige por la Ley 1581 de 2012, el Decreto 1377 de 2013 y demás normas complementarias.</p>
+                </section>
+
+                <section>
+                    <h2>3. Principios para el Tratamiento de Datos Personales</h2>
+                    <ul>
+                        <li><strong>Legalidad:</strong> Cumplimiento estricto de la ley.</li>
+                        <li><strong>Finalidad:</strong> Recolección con propósitos específicos.</li>
+                        <li><strong>Libertad:</strong> Consentimiento previo, expreso e informado.</li>
+                        <li><strong>Veracidad:</strong> Datos exactos y actualizados.</li>
+                        <li><strong>Transparencia:</strong> Acceso libre a la información sobre el tratamiento.</li>
+                        <li><strong>Acceso Restringido:</strong> Solo personal autorizado accede a sus datos.</li>
+                        <li><strong>Seguridad:</strong> Medidas técnicas y administrativas de protección.</li>
+                        <li><strong>Confidencialidad:</strong> Tratamiento con reserva absoluta.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>4. Finalidades del Tratamiento</h2>
+                    <ul>
+                        <li>Registro e inscripción a torneos, ligas y eventos.</li>
+                        <li>Administración de reservas y alquiler de canchas.</li>
+                        <li>Envío de comunicaciones, noticias y promociones.</li>
+                        <li>Atención de solicitudes, quejas o reclamos.</li>
+                        <li>Facturación, pagos y contabilidad.</li>
+                        <li>Mejoras de servicios y experiencia web.</li>
+                        <li>Estudios estadísticos y de mercado.</li>
+                        <li>Cumplimiento de obligaciones legales.</li>
+                        <li>Participación en escuela de fútbol u otras actividades.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>5. Derechos de los Titulares</h2>
+                    <ul>
+                        <li>Acceso, actualización y rectificación de datos.</li>
+                        <li>Prueba de la autorización.</li>
+                        <li>Información sobre el uso de datos.</li>
+                        <li>Revocación del consentimiento.</li>
+                        <li>Presentar quejas ante la SIC.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>6. Procedimiento para Ejercer Derechos</h2>
+                    <p>Puede contactarnos a través de:</p>
+                    <ul>
+                        <li><strong>Correo:</strong> <a href="mailto:Profutboljc@gmail.com">Profutboljc@gmail.com</a></li>
+                        <li><strong>Teléfono:</strong> +57 3203459145</li>
+                        <li><strong>Dirección:</strong> Kilómetro 3 vía Siberia a Tenjo, Cundinamarca</li>
+                    </ul>
+                    <p>Debe incluir su nombre completo, solicitud clara, datos de contacto y documentos de soporte (si aplica).</p>
+                    <p><strong>Plazos:</strong> Consultas: 10 días hábiles. Reclamos: 15 días hábiles.</p>
+                </section>
+
+                <section>
+                    <h2>7. Tratamiento de Datos Sensibles y de Menores</h2>
+                    <ul>
+                        <li>Solo se recolectarán datos sensibles si es estrictamente necesario y con su consentimiento.</li>
+                        <li>Datos de menores requerirán autorización expresa del representante legal.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>8. Medidas de Seguridad</h2>
+                    <p>Implementamos medidas de seguridad físicas, tecnológicas y administrativas para evitar accesos no autorizados o fraudes.</p>
+                </section>
+
+                <section>
+                    <h2>9. Vigencia y Modificaciones</h2>
+                    <p>Esta política entra en vigencia a partir del <time datetime="2025-08-01">1 de agosto de 2025</time>.</p>
+                    <p>Nos reservamos el derecho a modificar esta política. Cualquier cambio se comunicará oportunamente a través del sitio web.</p>
+                </section>
+            </article>
+        </section>
+    </main>
+    <Footer />
+</Layout>
+
+<style is:global>
+ .prose h2 { @apply text-2xl md:text-3xl font-bold text-text mb-4 mt-8; }
+ .prose a { @apply text-accent hover:underline; }
+ .prose ul { @apply list-disc list-inside space-y-2; }
+ .prose li::marker { @apply text-accent; }
+</style>

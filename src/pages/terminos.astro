@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+    title="Términos y Condiciones - ProFutbol JC"
+    description="Consulta los términos y condiciones para el uso de nuestro sitio web y la reserva de servicios en Profutbol JC."
+>
+    <Header />
+    <main class="py-16 md:py-24 bg-surface" role="main">
+        <section class="container mx-auto px-6 max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-10 text-text">Términos y <span class="text-accent">Condiciones de Uso</span></h1>
+
+            <article class="prose prose-lg max-w-none text-subtle-text">
+                <p class="text-xl">
+                    Bienvenido a ProFutbol JC. Al utilizar nuestro sitio web y contratar nuestros servicios, usted
+                    acepta cumplir y quedar vinculado por los siguientes términos y condiciones. Por favor, léalos
+                    detenidamente.
+                </p>
+
+                <section aria-labelledby="identificacion">
+                    <h2 id="identificacion">1. Identificación del Proveedor del Servicio</h2>
+                    <address class="not-italic">
+                        <strong>ProFutbol S.A.S</strong><br>
+                        NIT: 901616528-1<br>
+                        Dirección: Kilómetro 3 vía Siberia a Tenjo, Cundinamarca, Colombia<br>
+                        Correo: <a href="mailto:Profutboljc@gmail.com">Profutboljc@gmail.com</a><br>
+                        Teléfono: +57 3203459145
+                    </address>
+                </section>
+
+                <section>
+                    <h2>2. Objeto y Aceptación</h2>
+                    <p>El presente documento establece las condiciones mediante las cuales se regirá el uso del sitio
+                        web y la contratación de los servicios ofrecidos por ProFutbol S.A.S, que incluyen, pero no se
+                        limitan a, el alquiler de canchas deportivas, organización de torneos y eventos empresariales.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>3. Condiciones del Servicio</h2>
+
+                    <h4 class="text-xl font-semibold mt-4">3.1. Reserva de Canchas</h4>
+                    <ul>
+                        <li>Las reservas se realizan a través de nuestros canales oficiales de contacto (WhatsApp,
+                            teléfono o formulario de contacto).</li>
+                        <li>La reserva solo se considerará confirmada una vez se haya recibido el pago correspondiente y
+                            la confirmación por parte de nuestro equipo.</li>
+                        <li>El usuario se compromete a utilizar las instalaciones de manera adecuada.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold mt-4">3.2. Política de Pagos y Tarifas</h4>
+                    <ul>
+                        <li>Las tarifas vigentes para el alquiler de canchas y otros servicios serán las publicadas en
+                            nuestros canales oficiales o informadas al momento de la consulta.</li>
+                        <li> Se requiere el pago del 50% del valor total para confirmar una reserva. El 50% restante
+                            deberá ser cancelado antes de ingresar a la cancha.</li>
+                        <li>Aceptamos los siguientes métodos de pago: <strong>Efectivo, Transferencia Bancolombia, Nequi, Daviplata</strong>.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold mt-4">3.3. Política de Cancelación y Reembolsos</h4>
+                    <ul>
+                        <li>Cancelaciones realizadas con más de <strong>48 horas</strong> de antelación a la hora reservada podrán ser reprogramadas o recibirán un reembolso del <strong>100%</strong> del abono.</li>
+                        <li>Cancelaciones realizadas con menos de <strong>48 horas</strong> de antelación no serán elegibles para reembolso.</li>
+                        <li>En caso de que ProFutbol S.A.S deba cancelar una reserva por motivos de fuerza mayor, se
+                            ofrecerá la opción de reprogramar o un reembolso completo.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>4. Reglamento y Responsabilidad</h2>
+                    <ul>
+                        <li>Todos los usuarios y visitantes deben acatar las normas de comportamiento y seguridad del
+                            complejo deportivo.</li>
+                        <li>ProFutbol S.A.S no se hace responsable por lesiones personales ocurridas durante la práctica
+                            deportiva, la cual se realiza bajo el propio riesgo del participante.</li>
+                        <li>No nos hacemos responsables por la pérdida o daño de objetos personales dentro de las
+                            instalaciones.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>5. Propiedad Intelectual</h2>
+                    <p>Todo el contenido publicado en este sitio web, incluyendo textos, gráficos, logos, e imágenes, es
+                        propiedad de ProFutbol S.A.S y está protegido por las leyes de derechos de autor de Colombia.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>6. Tratamiento de Datos Personales</h2>
+                    <p>El tratamiento de los datos personales recolectados a través de este sitio web se rige por
+                        nuestra <a href="/politica">Política de Tratamiento de Datos Personales</a>, en cumplimiento
+                        con la Ley 1581 de 2012.</p>
+                </section>
+
+                <section>
+                    <h2>7. Ley Aplicable y Jurisdicción</h2>
+                    <p>Cualquier controversia derivada de estos términos y condiciones se regirá por la legislación
+                        colombiana y será sometida a la jurisdicción de los tribunales competentes de la República de
+                        Colombia.</p>
+                </section>
+            </article>
+        </section>
+    </main>
+    <Footer />
+</Layout>
+
+<style is:global>
+    .prose h2 { @apply text-2xl md:text-3xl font-bold text-text mb-4 mt-8; }
+    .prose h4 { @apply text-xl font-semibold text-text mb-3 mt-6; }
+    .prose a { @apply text-accent hover:underline; }
+    .prose ul { @apply list-disc list-inside space-y-2; }
+    .prose li::marker { @apply text-accent; }
+</style>

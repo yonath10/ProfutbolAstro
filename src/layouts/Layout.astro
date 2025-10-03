@@ -13,7 +13,7 @@ export interface Props {
 
 const {
   title = "ProfutbolJC - Alquiler Canchas de Fútbol en Tenjo | Cerca de Bogotá, Cota y Chía",
-  description = "Alquila las mejores canchas de fútbol en Tenjo. Césped natural profesional, fotografía deportiva y torneos. Ideal para equipos de Bogotá, Cota, Chía y la Sabana. ¡Reserva ya! 📞+57 320 345 9145",
+  description = "Alquila las mejores canchas de fútbol en Tenjo. Césped natural profesional, fotografía deportiva y torneos. Ideal para equipos de Bogotá, Cota, Chía y la Sabana. ¡Reserva ya! +57 320 345 9145",
   keywords = "canchas fútbol Tenjo, alquiler canchas Bogotá, fútbol Cota, canchas Chía, césped natural, torneos fútbol, fotografía deportiva, complejo deportivo Sabana Bogotá",
   ogImage = "/images/og-image.jpg",
   twitterImage = "/images/twitter-card.jpg",
@@ -21,7 +21,6 @@ const {
   noindex = false,
   nofollow = false,
 } = Astro.props;
-
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
 const currentYear = new Date().getFullYear();
 const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}, max-image-preview:large, max-snippet:-1, max-video-preview:-1`;
@@ -30,7 +29,6 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
 <!doctype html>
 <html lang="es" class="scroll-smooth" prefix="og: https://ogp.me/ns#">
   <head>
-    <!-- Charset y Viewport -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,13 +36,11 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
     <meta name="theme-color" content="#FDB813" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Preconnect para optimizar carga -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <!-- SEO Principal -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
@@ -53,7 +49,6 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
     <meta name="robots" content={robotsContent} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="business.business" />
     <meta property="og:site_name" content="Profutbol JC" />
     <meta property="og:title" content={title} />
@@ -70,7 +65,6 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
     <meta property="business:contact_data:postal_code" content="251050" />
     <meta property="business:contact_data:country_name" content="Colombia" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@profutboljc" />
     <meta name="twitter:creator" content="@profutboljc" />
@@ -79,7 +73,6 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
     <meta name="twitter:image" content={new URL(twitterImage, Astro.site)} />
     <meta name="twitter:image:alt" content="Vista aérea de las canchas de fútbol en Profutbol JC" />
 
-    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -87,7 +80,6 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fdb813" />
     <meta name="msapplication-TileColor" content="#fdb813" />
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": ["SportsActivityLocation", "LocalBusiness", "Place"],
@@ -121,21 +113,9 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
       "paymentAccepted": "Cash, Credit Card",
       "currenciesAccepted": "COP",
       "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Parking",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification", 
-          "name": "Changing Rooms",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Natural Grass Fields",
-          "value": true
-        }
+        { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Changing Rooms", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Natural Grass Fields", "value": true }
       ],
       "sport": "Soccer",
       "areaServed": ["Tenjo", "Bogotá", "Cota", "Chía", "Funza", "Mosquera", "Tabio"],
@@ -153,7 +133,6 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
       ]
     })} />
 
-    <!-- Fonts con preload para performance -->
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
@@ -167,7 +146,6 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
       />
     </noscript>
 
-    <!-- Font Awesome con preload -->
     <link 
       rel="preload" 
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
@@ -183,487 +161,36 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
         referrerpolicy="no-referrer"
       />
     </noscript>
-
-    <!-- Material Icons (solo si es necesario) -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-
-    <!-- Estilos globales optimizados -->
-    <style is:global>
-      /* ==============================================
-         RESET Y BASE
-      ============================================== */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        line-height: 1.6;
-        overflow-x: hidden;
-        min-height: 100vh;
-        position: relative;
-      }
-
-      /* Mejora de accesibilidad para usuarios con motion reducido */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-
-      /* ==============================================
-         ANIMACIONES
-      ============================================== */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes slideInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes slideInRight {
-        from {
-          opacity: 0;
-          transform: translateX(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes zoomIn {
-        from {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      @keyframes pulse {
-        0%, 100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.8;
-        }
-      }
-
-      /* ==============================================
-         VARIABLES CSS
-      ============================================== */
-      :root {
-        /* Colores principales */
-        --primary-color: #FDB813;
-        --secondary-color: #262386;
-        --dark-bg: #1a1a1a;
-        --light-bg: #f8f9fa;
-        --white: #ffffff;
-        --text-dark: #333333;
-        --text-light: #666666;
-        --text-muted: #999999;
-        
-        /* Sombras */
-        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-        --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
-        --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
-        
-        /* Transiciones */
-        --transition-fast: 0.2s ease;
-        --transition-normal: 0.3s ease;
-        --transition-slow: 0.5s ease;
-        
-        /* Espaciado */
-        --spacing-xs: 0.5rem;
-        --spacing-sm: 1rem;
-        --spacing-md: 1.5rem;
-        --spacing-lg: 2rem;
-        --spacing-xl: 3rem;
-        --spacing-2xl: 4rem;
-      }
-
-      /* ==============================================
-         HERO BACKGROUND
-      ============================================== */
-      .hero-bg {
-        background-image: url('/images/0.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-      }
-
-      /* Para pantallas más grandes, usar attachment fixed */
-      @media (min-width: 1024px) {
-        .hero-bg {
-          background-attachment: fixed;
-        }
-      }
-
-      /* Overlay para mejorar legibilidad */
-      .hero-bg::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
-        pointer-events: none;
-      }
-
-      /* ==============================================
-         NAVEGACIÓN
-      ============================================== */
-      .nav-link {
-        position: relative;
-        display: inline-block;
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: var(--primary-color);
-        transition: width var(--transition-normal);
-      }
-
-      .nav-link:hover::after,
-      .nav-link:focus-visible::after {
-        width: 100%;
-      }
-
-      /* ==============================================
-         CLASES DE ANIMACIÓN
-      ============================================== */
-      .animate-fade-in {
-        animation: fadeIn 1s ease-out forwards;
-      }
-
-      .animate-slide-in-up {
-        animation: slideInUp 0.8s ease-out forwards;
-      }
-
-      .animate-slide-in-down {
-        animation: slideInDown 0.8s ease-out forwards;
-      }
-
-      .animate-slide-in-left {
-        animation: slideInLeft 0.8s ease-out forwards;
-      }
-
-      .animate-slide-in-right {
-        animation: slideInRight 0.8s ease-out forwards;
-      }
-
-      .animate-zoom-in {
-        animation: zoomIn 0.8s ease-out forwards;
-      }
-
-      .animate-pulse {
-        animation: pulse 2s ease-in-out infinite;
-      }
-
-      /* ==============================================
-         UTILIDADES DE ACCESIBILIDAD
-      ============================================== */
-      /* Skip to main content link */
-      .skip-to-content {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: var(--primary-color);
-        color: var(--white);
-        padding: 8px 16px;
-        text-decoration: none;
-        font-weight: 600;
-        z-index: 100;
-        border-radius: 0 0 4px 0;
-      }
-
-      .skip-to-content:focus {
-        top: 0;
-      }
-
-      /* Focus visible mejorado */
-      *:focus-visible {
-        outline: 3px solid var(--primary-color);
-        outline-offset: 2px;
-      }
-
-      /* Ocultar visualmente pero mantener accesible */
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
-
-      /* ==============================================
-         IMÁGENES RESPONSIVE
-      ============================================== */
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* ==============================================
-         SCROLL SUAVE PARA ANCLAS
-      ============================================== */
-      @media (prefers-reduced-motion: no-preference) {
-        html {
-          scroll-behavior: smooth;
-        }
-      }
-
-      /* ==============================================
-         CONTENEDORES RESPONSIVE
-      ============================================== */
-      .container-custom {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      @media (min-width: 640px) {
-        .container-custom {
-          padding: 0 2rem;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        .container-custom {
-          padding: 0 3rem;
-        }
-      }
-
-      /* ==============================================
-         OPTIMIZACIÓN DE PERFORMANCE
-      ============================================== */
-      /* Lazy loading para imágenes */
-      img[loading="lazy"] {
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-
-      img[loading="lazy"].loaded {
-        opacity: 1;
-      }
-
-      /* ==============================================
-         ALTO CONTRASTE
-      ============================================== */
-      @media (prefers-contrast: high) {
-        :root {
-          --primary-color: #F39C12;
-          --text-dark: #000000;
-          --text-light: #333333;
-        }
-
-        .nav-link::after {
-          height: 3px;
-        }
-
-        button,
-        a {
-          outline: 2px solid currentColor;
-          outline-offset: 2px;
-        }
-      }
-
-      /* ==============================================
-         MODO OSCURO (Opcional)
-      ============================================== */
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --light-bg: #1a1a1a;
-          --white: #0d1117;
-          --text-dark: #e6e6e6;
-          --text-light: #b3b3b3;
-          --text-muted: #808080;
-        }
-      }
-
-      /* ==============================================
-         LOADING STATES
-      ============================================== */
-      .loading-skeleton {
-        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-        background-size: 200% 100%;
-        animation: loading 1.5s infinite;
-      }
-
-      @keyframes loading {
-        0% {
-          background-position: 200% 0;
-        }
-        100% {
-          background-position: -200% 0;
-        }
-      }
-
-      /* ==============================================
-         PRINT STYLES
-      ============================================== */
-      @media print {
-        *,
-        *::before,
-        *::after {
-          background: transparent !important;
-          color: #000 !important;
-          box-shadow: none !important;
-          text-shadow: none !important;
-        }
-
-        a,
-        a:visited {
-          text-decoration: underline;
-        }
-
-        a[href]::after {
-          content: " (" attr(href) ")";
-        }
-
-        img {
-          page-break-inside: avoid;
-        }
-
-        h2,
-        h3 {
-          page-break-after: avoid;
-        }
-      }
-    </style>
   </head>
   <body class="antialiased bg-white text-gray-900 transition-colors duration-300">
-    <!-- Skip to main content link para accesibilidad -->
     <a href="#main-content" class="skip-to-content">
       Saltar al contenido principal
     </a>
-
-    <!-- Main content -->
     <slot />
+    <script>
+      // Script para animaciones de scroll
+      document.addEventListener("DOMContentLoaded", () => {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
 
-    <!-- Scripts de performance monitoring (opcional) -->
-    <script is:inline>
-      // Web Vitals monitoring
-      if ('PerformanceObserver' in window) {
-        // LCP - Largest Contentful Paint
-        const lcpObserver = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          const lastEntry = entries[entries.length - 1];
-          console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime);
-        });
-        
-        try {
-          lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-        } catch (e) {
-          console.warn('LCP observer not supported');
-        }
-
-        // CLS - Cumulative Layout Shift
-        let clsValue = 0;
-        const clsObserver = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (!entry.hadRecentInput) {
-              clsValue += entry.value;
-              console.log('CLS:', clsValue);
-            }
-          }
-        });
-
-        try {
-          clsObserver.observe({ entryTypes: ['layout-shift'] });
-        } catch (e) {
-          console.warn('CLS observer not supported');
-        }
-      }
-
-      // Lazy loading images
-      if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.classList.add('loaded');
-              imageObserver.unobserve(img);
-            }
+          animatedElements.forEach(el => {
+            observer.observe(el);
           });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-          document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-            imageObserver.observe(img);
+        } else {
+          // Fallback para navegadores antiguos
+          animatedElements.forEach(el => {
+            el.classList.add('is-visible');
           });
-        });
-      }
+        }
+      });
     </script>
   </body>
 </html>

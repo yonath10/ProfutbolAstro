@@ -1,10 +1,13 @@
 ---
-// Header.astro
+// src/components/Header.astro
+const { pathname } = Astro.url;
+const isHomePage = pathname === '/';
+
 const navLinks = [
   { href: '#inicio', label: 'Inicio' },
   { href: '#servicios', label: 'Servicios' },
+  { href: '#torneos', label: 'Torneos' },
   { href: '#nosotros', label: 'Nosotros' },
-  { href: '#torneos', label: 'Torneos' }, // <-- ENLACE AÑADIDO
   { href: '#contacto', label: 'Contacto' },
 ];
 
@@ -13,11 +16,21 @@ const socialLinks = [
     { href: "https://www.instagram.com/profutboljc/", icon: "fab fa-instagram", label: "Instagram"},
     { href: "https://www.tiktok.com/@profutbol.jc", icon: "fab fa-tiktok", label: "TikTok"}
 ];
+
+// Función para generar los Hrefs correctos
+const getLink = (href: string) => {
+    if (isHomePage) {
+        return href; // Mantiene #inicio, #servicios, etc.
+    }
+    // Si no es la home, construye la URL completa
+    if (href === '#inicio') return '/';
+    return `/${href}`; // Devuelve /#servicios, /#nosotros, etc.
+}
 ---
 
 <header 
   id="header" 
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg" 
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg shadow-sm" 
   role="banner">
   <nav 
     class="container mx-auto px-4 lg:px-6" 
@@ -28,7 +41,7 @@ const socialLinks = [
 
       <div class="hidden lg:flex items-center gap-4">
         {socialLinks.map(link => (
-          <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`Siguenos en ${link.label}`} class="text-gray-600 hover:text-yellow-500 transition-colors">
+          <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`Síguenos en ${link.label}`} class="text-gray-600 hover:text-yellow-500 transition-colors">
             <i class={link.icon} aria-hidden="true"></i>
           </a>
         ))}
@@ -36,7 +49,7 @@ const socialLinks = [
 
       <div class="flex-1 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:flex-none">
         <a 
-          href="#inicio" 
+          href="/" 
           class="inline-flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 rounded-lg px-2 py-1 transition-transform hover:scale-105"
           aria-label="Profutbol JC - Página de inicio">
           <img 
@@ -58,7 +71,7 @@ const socialLinks = [
           {navLinks.map((link) => (
             <li role="none">
               <a 
-                href={link.href}
+                href={getLink(link.href)}
                 role="menuitem"
                 class="nav-link px-4 py-2 text-sm font-semibold text-gray-700 hover:text-yellow-500 rounded-lg transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2">
                 {link.label}
@@ -114,9 +127,7 @@ const socialLinks = [
 
     <div 
       id="mobile-menu"
-      class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
-      role="dialog"
-      aria-modal="true"
+      class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0"
       aria-labelledby="mobile-menu-title">
       
       <div class="py-4 border-t border-gray-100">
@@ -126,7 +137,7 @@ const socialLinks = [
           {navLinks.map((link) => (
             <li role="none">
               <a 
-                href={link.href}
+                href={getLink(link.href)}
                 role="menuitem"
                 class="mobile-nav-link flex items-center justify-center px-4 py-3 text-base font-semibold text-gray-700 hover:text-yellow-500 hover:bg-yellow-50 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-inset transform hover:scale-[1.02]">
                 {link.label}
@@ -150,159 +161,22 @@ const socialLinks = [
     </div>
   </nav>
 </header>
-
 <div class="h-20 lg:h-24" aria-hidden="true"></div>
-
-<style>
-  #header.scrolled {
-     @apply shadow-md;
-    background-color: rgba(255, 255, 255, 0.95);
-  }
-
-  /* Animación del menú hamburguesa */
-  #mobile-menu-button[aria-expanded="true"] .hamburger {
-    @apply rotate-90;
-  }
-  #mobile-menu-button[aria-expanded="true"] .line-1 {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  #mobile-menu-button[aria-expanded="true"] .line-2 {
-    opacity: 0;
-  }
-  #mobile-menu-button[aria-expanded="true"] .line-3 {
-    transform: rotate(-45deg) translate(7px, -6px);
-  }
-
-  /* Animación stagger para los items del menú móvil */
-  .mobile-nav-link {
-    animation: slideInFromRight 0.3s ease-out backwards;
-  }
-
-  .mobile-nav-link:nth-child(1) { animation-delay: 0.05s; }
-  .mobile-nav-link:nth-child(2) { animation-delay: 0.1s; }
-  .mobile-nav-link:nth-child(3) { animation-delay: 0.15s; }
-  .mobile-nav-link:nth-child(4) { animation-delay: 0.2s; }
-
-  @keyframes slideInFromRight {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  @supports (backdrop-filter: blur(10px)) {
-    #header {
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-  }
-</style>
 
 <script>
   // Mobile menu toggle
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  const header = document.getElementById('header');
-
+  
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
       const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-      
-      mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
-      
+      mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
       if (isExpanded) {
         mobileMenu.style.maxHeight = '0px';
-        mobileMenu.style.opacity = '0';
       } else {
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-        mobileMenu.style.opacity = '1';
-      }
-    });
-    
-    const mobileNavLinks = mobileMenu.querySelectorAll('a[href^="#"]');
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-        mobileMenu.style.maxHeight = '0px';
-        mobileMenu.style.opacity = '0';
-      });
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenuButton.getAttribute('aria-expanded') === 'true') {
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-        mobileMenu.style.maxHeight = '0px';
-        mobileMenu.style.opacity = '0';
-        mobileMenuButton.focus();
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (mobileMenuButton.getAttribute('aria-expanded') === 'true') {
-        if (!header?.contains(e.target as Node)) {
-          mobileMenuButton.setAttribute('aria-expanded', 'false');
-          mobileMenu.style.maxHeight = '0px';
-          mobileMenu.style.opacity = '0';
-        }
       }
     });
   }
-
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    const headerElement = document.getElementById('header');
-    if (headerElement) {
-      if (window.scrollY > 50) {
-        headerElement.classList.add('scrolled');
-        headerElement.classList.add('shadow-sm');
-      } else {
-        headerElement.classList.remove('scrolled');
-        headerElement.classList.remove('shadow-sm');
-      }
-    }
-  }, { passive: true });
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = anchor.getAttribute('href');
-        const target = document.querySelector(href || '');
-        
-        if (target) {
-            const headerOffset = 80; // Altura del header
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-  });
 </script>

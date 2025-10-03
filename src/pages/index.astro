@@ -9,17 +9,14 @@ import Contacto from '../components/Contacto.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout 
-    title="ProfutbolJC - Inicio | Alquiler de Canchas y Torneos."
-    description="Bienvenido a ProfutbolJC, tu complejo deportivo en Tenjo. Reserva canchas de fútbol 5, 7 y 11, participa en nuestros torneos y disfruta con amigos."
->
+<Layout>
     <Header />
     <main id="main-content">
-        <div class="animate-on-scroll"><Hero /></div>
-        <div class="animate-on-scroll"><Servicios /></div>
-        <div class="animate-on-scroll"><Torneos /></div>
-        <div class="animate-on-scroll"><Nosotros /></div>
-        <div class="animate-on-scroll"><Contacto /></div>
+        <Hero />
+        <Servicios />
+        <Nosotros />
+        <Torneos />
+        <Contacto />
     </main>
     <Footer />
 </Layout>

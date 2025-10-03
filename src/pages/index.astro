@@ -13,10 +13,18 @@ import Footer from '../components/Footer.astro';
     <Header />
     <main id="main-content">
         <Hero />
-        <Servicios />
-        <Nosotros />
-        <Torneos />
-        <Contacto />
+        <div class="animate-on-scroll">
+            <Servicios />
+        </div>
+        <div class="animate-on-scroll">
+            <Nosotros />
+        </div>
+        <div class="animate-on-scroll">
+            <Torneos />
+        </div>
+        <div class="animate-on-scroll">
+            <Contacto />
+        </div>
     </main>
     <Footer />
 </Layout>

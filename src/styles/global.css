@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   html {
     @apply scroll-smooth scroll-pt-[100px] antialiased;
@@ -14,12 +13,12 @@
   }
 }
 
-
+/* Animaciones de Scroll */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(2rem);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  transition-delay: 150ms;
+  transition-delay: 150ms; /* Un pequeño retraso para que sea más suave */
 }
 
 .animate-on-scroll.is-visible {
@@ -27,19 +26,10 @@
   transform: translateY(0);
 }
 
-
-.skip-to-content {
-  @apply absolute -top-12 left-0 bg-accent text-primary p-2 font-semibold z-[10000] rounded-br-md transition-all duration-300;
-}
-.skip-to-content:focus {
-  @apply top-0;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .animate-on-scroll {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }

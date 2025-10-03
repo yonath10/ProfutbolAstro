@@ -167,10 +167,10 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
       Saltar al contenido principal
     </a>
     <slot />
-    <script>
-      // Script para animaciones de scroll
+  <script>
       document.addEventListener("DOMContentLoaded", () => {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        
         if ('IntersectionObserver' in window) {
           const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -179,13 +179,14 @@ const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow'
                 observer.unobserve(entry.target);
               }
             });
-          }, { threshold: 0.1 });
+          }, { 
+            threshold: 0.1
+          });
 
           animatedElements.forEach(el => {
             observer.observe(el);
           });
         } else {
-          // Fallback para navegadores antiguos
           animatedElements.forEach(el => {
             el.classList.add('is-visible');
           });

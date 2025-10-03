@@ -4,21 +4,33 @@
 
 @layer base {
   html {
-    @apply scroll-smooth scroll-pt-[100px] antialiased;
+    @apply scroll-smooth antialiased;
+    scroll-padding-top: 100px;
     text-rendering: optimizeLegibility;
   }
+  
   body {
     @apply bg-background text-text;
     font-family: 'Poppins', sans-serif;
   }
+
+  /* Skip to content link para accesibilidad */
+  .skip-to-content {
+    @apply absolute -top-full left-0 bg-accent text-primary font-bold py-2 px-4 z-50;
+    @apply focus:top-0 transition-all duration-200;
+  }
 }
 
-/* Animaciones de Scroll */
+/* ============================================
+   ANIMACIONES DE SCROLL
+   ============================================ */
+
+/* Animación fade-in desde abajo */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(2rem);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  transition-delay: 150ms; /* Un pequeño retraso para que sea más suave */
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .animate-on-scroll.is-visible {
@@ -26,10 +38,180 @@
   transform: translateY(0);
 }
 
+/* Animaciones específicas de componentes */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-in-down {
+  opacity: 0;
+  animation: slideInDown 0.8s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  opacity: 0;
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-zoom-in {
+  opacity: 0;
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animación de pulso suave para elementos interactivos */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* ============================================
+   PREFERENCIAS DE MOVIMIENTO REDUCIDO
+   ============================================ */
+
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
   .animate-on-scroll {
+    opacity: 1;
+    transform: none;
     transition: none;
+  }
+
+  .animate-fade-in,
+  .animate-slide-in-down,
+  .animate-slide-in-up,
+  .animate-zoom-in {
+    animation: none;
     opacity: 1;
     transform: none;
   }
+}
+
+/* ============================================
+   UTILIDADES PERSONALIZADAS
+   ============================================ */
+
+@layer components {
+  /* Botón primario */
+  .btn-primary {
+    @apply bg-accent text-primary font-bold py-3 px-8 rounded-full;
+    @apply hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105;
+    @apply shadow-lg hover:shadow-xl;
+  }
+
+  /* Botón secundario */
+  .btn-secondary {
+    @apply bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full;
+    @apply hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105;
+  }
+
+  /* Card con hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+}
+
+/* ============================================
+   MEJORAS DE ACCESIBILIDAD
+   ============================================ */
+
+/* Mejor contraste para modo de alto contraste */
+@media (prefers-contrast: high) {
+  input,
+  textarea,
+  select {
+    border-width: 3px;
+  }
+
+  button,
+  a {
+    @apply outline outline-2 outline-offset-2;
+  }
+}
+
+/* Focus visible mejorado */
+:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2;
+}
+
+/* ============================================
+   ESTILOS DE SCROLL PERSONALIZADOS
+   ============================================ */
+
+/* Scrollbar personalizado (Webkit) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-yellow-400;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.accent') theme('colors.background');
 }

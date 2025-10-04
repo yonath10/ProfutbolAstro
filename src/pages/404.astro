@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+    title="Página no encontrada (404) - ProFutbol JC"
+    description="La página que buscas no existe o fue movida. Regresa al inicio para descubrir nuestras canchas de fútbol, torneos y servicios."
+    noindex={true}
+>
+    <Header />
+    <main class="py-24 bg-surface" id="main-content">
+        <section class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto">
+                <i class="fas fa-exclamation-triangle text-accent text-6xl mb-6 animate-bounce" aria-hidden="true"></i>
+                
+                <p class="text-accent font-bold text-9xl leading-none tracking-tighter mb-4">
+                    404
+                </p>
+
+                <h1 class="text-3xl md:text-4xl font-bold text-text mb-4">
+                    ¡Ups! Página no encontrada
+                </h1>
+
+                <p class="text-lg text-subtle-text mb-10 leading-relaxed">
+                    Parece que el balón salió de la cancha. La página que estás buscando no existe, fue movida o está en el camerino.
+                </p>
+
+                <a 
+                    href="/" 
+                    class="bg-accent text-primary font-bold py-4 px-8 rounded-full hover:bg-yellow-400 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 shadow-lg shadow-accent/30"
+                >
+                    <i class="fas fa-home mr-3" aria-hidden="true"></i>
+                    Volver al Inicio
+                </a>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(-15%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+            transform: translateY(0);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+    .animate-bounce {
+        animation: bounce 1.5s infinite;
+    }
+</style>
